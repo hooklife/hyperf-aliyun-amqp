@@ -1,0 +1,47 @@
+{
+  "name": "hooklife/hyperf-aliyun-amqp",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "php",
+    "hyperf",
+    "swoole",
+    "aliyun-amqp"
+  ],
+  "description": "",
+  "autoload": {
+    "psr-4": {
+      "Hooklife\\HyperfAliyunAmqp\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "HyperfTest\\": "tests"
+    }
+  },
+  "require": {
+    "php": ">=7.2",
+    "ext-swoole": ">=4.4",
+    "hyperf/amqp": "^1.1",
+    "hyperf/di": "1.1.*",
+    "hyperf/framework": "1.1.*"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.14",
+    "phpstan/phpstan": "^0.10.5",
+    "swoft/swoole-ide-helper": "dev-master"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "scripts": {
+    "test": "co-phpunit -c phpunit.xml --colors=always",
+    "analyze": "phpstan analyse --memory-limit 300M -l 0 ./src",
+    "cs-fix": "php-cs-fixer fix $1"
+  },
+  "extra": {
+    "hyperf": {
+      "config": "Hooklife\\HyperfAliyunAmqp\\ConfigProvider"
+    }
+  }
+}
